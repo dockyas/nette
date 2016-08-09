@@ -1,0 +1,85 @@
+a:focus, a:active {
+   outline:none;
+}
+
+.alert {
+    font-family: 'Roboto', sans-serif;
+    position:fixed;
+    top:10px;
+    right:10px;
+    margin:0;
+    color:white;
+    font-size:15px;
+    font-weight:100;
+    z-index: 10;
+    border-radius: 0x;
+    width:250px;
+    text-align: center;
+    background: #464960;
+}
+
+.alert.alert-success {
+    color: #FFF;
+    background-color: #4db6ac;
+}
+
+.alert.alert-danger {
+    border: 0px none;
+    background-color: #ff8a65;
+}
+
+a[href^="#error:"] {
+    background: red;
+    color: white;
+}
+
+form th, form td {
+    vertical-align: top;
+    font-weight: normal;
+}
+
+form th {
+    text-align: right;
+}
+
+form .required label {
+    font-weight: bold;
+}
+
+form .error {
+    color: #D00;
+    font-weight: bold;
+}
+
+/* USER LINE */
+
+.user-line {
+    position: fixed;
+    bottom:5px;
+    right:5px;
+}
+
+.button-link {
+    font-family: 'Roboto', sans-serif;
+    float:left;
+    color:white;
+    font-size:14px;
+    font-weight:100;
+    border-radius: 4px;
+    padding:5px 10px;
+    margin-left:5px;
+}
+
+.button-link:hover,
+.button-link:active,
+.button-link:focus {
+    color:white;
+}
+
+.button-link.admin {
+    background: #464960;
+}
+
+.button-link.logout {
+    background: #404257;
+}

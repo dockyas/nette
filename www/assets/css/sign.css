@@ -1,0 +1,107 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: url("/assets/img/sign/bg.jpg") top center no-repeat;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-signin {
+    background: #121215;
+    padding:50px 80px;
+    margin-top:100px;
+}
+
+.form-signin h1 {
+    font-weight:300;
+    font-size: 25px;
+    color:white;
+    padding:0 0 15px 0;
+    margin:0 15px 30px 15px;
+    border-bottom: 1px solid #1d1d22;
+}
+
+.form-signin h1 strong {
+    font-weight:700;
+}
+
+form span {
+    font-weight: 300;
+    color:white;
+    font-size:17px;
+    display:none;
+}
+
+form .form-control {
+    height:40px;
+    border:1px solid #1d1d22;
+    outline:none;
+    color:white;
+    font-size:15px;
+    padding:0 15px 0 15px;
+    background: transparent;
+    border-radius: 0;
+    margin:8px 0;
+}
+
+.bottom-15 {
+    margin-bottom: 15px;
+}
+
+form .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color:white;
+}
+
+form .btn {
+    width:100%;
+    border:0;
+    border-radius: 0;
+    outline:none;
+    background: #1d1d22;
+    text-align: center;
+    height:44px;
+    padding:0;
+    font-weight: 400;
+    font-size:15px;
+    color:white;
+}
+
+form .btn:hover,
+form .btn:active,
+form .btn:focus {
+    color:white;
+}
+
+form label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color:white;
+    font-size: 15px;
+    padding-left:35px;
+    background: url("/assets/img/sign/def.png") left center no-repeat;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form label.selected {
+    background: url("/assets/img/sign/check.png") left center no-repeat;
+}
+
+form input[type=checkbox] {
+    display:none;
+}
+
+form a {
+    color:white;
+    font-weight: 300;
+    font-size:15px;
+}
+
+form a:hover {
+    color:white;
+}
+
+.nav {
+    padding:0 0 0 15px;
+}
