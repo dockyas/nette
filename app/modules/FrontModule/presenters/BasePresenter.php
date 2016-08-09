@@ -46,7 +46,6 @@ abstract class BasePresenter extends Presenter {
         
         $this->template->lang = $this->locale;
         
-        /** Webpage settings */
         $this->template->settings = $this->settingsFacade->getAll();
         $this->template->navigation = $this->navigationFacade->getAll();
     }
