@@ -30,7 +30,7 @@ class Navigation extends BaseEntity {
      * @ORM\Column(type="string")
      */
     protected $title;
-    
+
     /**
      * Sloupec pro slug.
      * @ORM\Column(type="string")
@@ -42,7 +42,19 @@ class Navigation extends BaseEntity {
      * @ORM\Column(type="text")
      */
     protected $content;
-    
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Gallery", inversedBy="title")
+     * @ORM\JoinColumn(name="gallery_id", referencedColumnName="id")
+     */
+     protected $gallery;
+
+     /**
+      * Sloupec pro obsah.
+      * @ORM\Column(type="integer")
+      */
+     protected $gallery_id;
+
     /**
      * @ORM\Column(type="integer")
      */

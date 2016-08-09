@@ -26,16 +26,16 @@ abstract class BasePresenter extends Presenter {
 
     /** @var SettingsFacade @inject */
     public $settingsFacade;
-    
+
     /** @var NavigationFacade @inject */
     public $navigationFacade;
-    
+
     /** @var signaled */
     public $signaled = false;
-    
+
     protected function startup() {
         parent::startup();
-        
+
         if ($this->getSignal() !== null) {
             $this->signaled = true;
         }
@@ -43,21 +43,21 @@ abstract class BasePresenter extends Presenter {
 
     protected function beforeRender() {
         parent::beforeRender();
-        
+
         $this->template->lang = $this->locale;
-        
+
         $this->template->settings = $this->settingsFacade->getAll();
         $this->template->navigation = $this->navigationFacade->getAll();
     }
-    
+
     protected function afterRender() {
-        parent::afterRender();      
-        
+        parent::afterRender();
+
         if ($this->isAjax() && !$this->signaled && !$this->isControlInvalid()) {
             $this->redrawControl('title');
             $this->redrawControl('navigation');
             $this->redrawControl('content');
-        }    
+        }
     }
 
 }
