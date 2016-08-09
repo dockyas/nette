@@ -1,5 +1,6 @@
 app/config/config.local.neon
 vendor/
+temp/
 nbproject/private/private.properties
 nbproject/private/private.xml
 nbproject/project.properties
