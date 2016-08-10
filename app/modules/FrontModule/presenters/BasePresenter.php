@@ -7,7 +7,6 @@
 
 namespace App\Modules\FrontModule\Presenters;
 
-use Kdyby\Translation\Translator;
 use Nette\Application\UI\Presenter;
 use App\Model\Facades\SettingsFacade as SettingsFacade;
 use App\Model\Facades\NavigationFacade as NavigationFacade;
@@ -17,12 +16,6 @@ use App\Model\Facades\NavigationFacade as NavigationFacade;
  * @package App\Modules\FrontModule\Presenters
  */
 abstract class BasePresenter extends Presenter {
-
-    /** @persistent null|string */
-    public $locale;
-
-    /** @var Translator @inject */
-    public $translator;
 
     /** @var SettingsFacade @inject */
     public $settingsFacade;
@@ -43,8 +36,6 @@ abstract class BasePresenter extends Presenter {
 
     protected function beforeRender() {
         parent::beforeRender();
-
-        $this->template->lang = $this->locale;
 
         $this->template->settings = $this->settingsFacade->getAll();
         $this->template->navigation = $this->navigationFacade->getAll();

@@ -58,20 +58,12 @@
                         <li n:class="$presenter->isLinkCurrent('Homepage:') ? active">
                             <a n:href="Homepage:" class="ajax">Hlavní stránka</a>
                         </li>
-                        <li n:foreach="$navigation as $nav" n:class="$presenter->isLinkCurrent('Pages:page',$nav->slug) ? active">
-                        <a n:href="Pages:page $nav->slug">{$nav->title}
+                        <li n:foreach="$navigation as $nav" n:class="$presenter->isLinkCurrent('Pages:navigation',$nav->slug) ? active">
+                        <a n:href="Pages:navigation $nav->slug">{$nav->title}
                             {if $nav->gallery_id != NULL}
                                 {$nav->gallery->title}
                             {/if}
                         </a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li n:class="$lang == 'cs' ? active">
-                            <a n:href="this, locale => cs">CZ</a>
-                        </li>
-                        <li n:class="$lang == 'en' ? active">
-                            <a n:href="this, locale => en">EN</a>
                         </li>
                     </ul>
                 </div>

@@ -15,12 +15,29 @@ use App\Model\Facades\PagesFacade;
  * @package App\FrontModule\Presenters
  */
 class PagesPresenter extends BasePresenter {
-    
+
     /** @var NavigationFacade @inject */
     public $navigationFacade;
-    
+
     /** @var PagesFacade @inject */
     public $pagesFacade;
+
+    /**
+     * @param string $slug
+     */
+    public function renderNavigation($slug) {
+
+        /* GET Navigation */
+        $navigation = $this->navigationFacade->getOne($slug);
+
+        /* CHECK IF DOESN'T EXISTS */
+
+        if ($navigation) {
+            $this->template->item = $navigation;
+        } else {
+            $this->error('Stránka neexistuje', 404);
+        }
+    }
 
     /**
      * @param string $slug
@@ -30,25 +47,12 @@ class PagesPresenter extends BasePresenter {
         /* GET Page */
         $page = $this->pagesFacade->getOne($slug);
 
-        /* GET Navigation */
-        $navigation = $this->navigationFacade->getOne($slug);
-
         /* CHECK IF DOESN'T EXISTS */
-
-        if (!$page AND ! $navigation) {
-            $this->error('Stránka neexistuje', 404);
-        }
-
-        /* IF PAGE */
 
         if ($page) {
             $this->template->item = $page;
-        }
-
-        /* IF NAVIGATION */
-
-        if ($navigation) {
-            $this->template->item = $navigation;
+        } else {
+            $this->error('Stránka neexistuje', 404);
         }
     }
 

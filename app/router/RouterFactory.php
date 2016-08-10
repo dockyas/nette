@@ -21,7 +21,19 @@ class RouterFactory
         $aRouter[] = new Route('admin/<presenter>/<action>[/<id>]', 'Homepage:default');
 
         $router[] = $fRouter = new RouteList('Front');
-        $fRouter[] = new Route('<locale=cs cs|en>/<slug [0-9a-zA-Z\-]+>', [
+        $fRouter[] = new Route('<slug [0-9a-zA-Z\-]+>', [
+            "presenter" => "Pages",
+            "action" => "navigation",
+            "slug" => [
+                Route::FILTER_IN => function($slug) {
+                    return \Nette\Utils\Strings::webalize($slug);
+                },
+                Route::FILTER_OUT => function($slug) {
+                    return \Nette\Utils\Strings::webalize($slug);
+                }
+            ]
+        ]);
+		$fRouter[] = new Route('stranka/<slug [0-9a-zA-Z\-]+>', [
             "presenter" => "Pages",
             "action" => "page",
             "slug" => [
@@ -33,8 +45,8 @@ class RouterFactory
                 }
             ]
         ]);
-		
-        $fRouter[] = new Route('<locale=cs cs|en>/<presenter>/<action>[/<id [0-9]+>]', 'Homepage:default');
+
+        $fRouter[] = new Route('<presenter>/<action>[/<id [0-9]+>]', 'Homepage:default');
 
         return $router;
     }
