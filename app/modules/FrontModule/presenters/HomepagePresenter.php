@@ -6,6 +6,7 @@
  */
 
 namespace App\Modules\FrontModule\Presenters;
+//use App\Libs\Upload\Uploader;
 
 /**
  * HomepagePresenter
@@ -14,7 +15,7 @@ namespace App\Modules\FrontModule\Presenters;
 class HomepagePresenter extends BasePresenter {
 
     public function renderDefault() {
-        
+        //$upload = new Uploader('image');
     }
 
 }
